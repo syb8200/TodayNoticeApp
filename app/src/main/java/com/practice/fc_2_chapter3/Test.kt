@@ -7,9 +7,6 @@ import java.net.ServerSocket
 
 // JVM에서 작동함
 fun main() {
-    /**
-     *  Socket으로 직접 통신하기
-     */
     // 네트워크 관련 동작은 메인 스레드(UI 스레드)에서 작동되지 않음
     // 에뮬에서는 작동되지 않음 (컴퓨터와 핸드폰의 와이파이가 일치해야함)
     Thread {
@@ -41,7 +38,7 @@ fun main() {
             printer.println("Content-Type: text/html\r\n")
 
             // BODY
-            printer.println("{\"message\": \"Today is Sunny\"}")
+            printer.println("{\"message\": \"Hello World\"}")
             printer.println("\r\n")
             printer.flush() // 잔여 데이터가 있을 수 있으니, 마저 배출해준다.
             printer.close() // outputStream 끊기
